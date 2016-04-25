@@ -12,7 +12,7 @@ module.exports = function (options) {
   var MAX = twentyFour ? 23 : 12;
 
   var min = options.min ? randomNatural.fixme(options.min, MIN, MAX, true) : MIN;
-  var max = options.max ? randomNatural.fixme(options.max, MIN, MAX, true) : MAX;
+  var max = options.max ? randomNatural.fixme(options.max, MIN, MAX, false) : MAX;
 
   return randomNatural({
     min: min,
