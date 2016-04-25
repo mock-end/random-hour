@@ -20,8 +20,12 @@ $ npm install --save random-hour
 var randomHour = require('random-hour');
 
 // API
-// - randomHour();
-// - randomHour(twentyFour);
+// - randomHour([options]);
+
+// options
+// - twentyFour
+// - min
+// - max
 ```
 
 By default, returns an hour from `1` to `12` for a standard [12-hour clock](https://en.wikipedia.org/wiki/12-hour_clock):
@@ -33,8 +37,21 @@ randomHour();
 Can optionally specify a full twenty-four:
 
 ```js
-randomHour(true);
+randomHour({ twentyFour: true });
 // => 14
+```
+
+Optionally specify min, max, or both to limit the range.
+
+```js
+randomHour({ min: 10 });
+// => 11
+
+randomHour({ max: 10 });
+// => 7
+
+randomHour({ min: 5, max: 10 });
+// => 8
 ```
 
 ## Related
